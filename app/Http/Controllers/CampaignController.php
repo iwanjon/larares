@@ -33,6 +33,8 @@ class CampaignController extends Controller
                         ]
                     ],400));
                 }
+            // abort(400, "damn error");
+        // }
                 
                 // dd("momo");
         $data = $request->validated();
@@ -90,6 +92,9 @@ class CampaignController extends Controller
 
     	// GetCampaigns(writer http.ResponseWriter, request *http.Request)
 
+        /**
+         * @unauthenticated
+        */
         public function getCampaigns(Request $request):JsonResponse{
 
             $data = Campaign::query()->get();
@@ -110,6 +115,9 @@ class CampaignController extends Controller
 
 	// GetCampaign(writer http.ResponseWriter, request *http.Request)
     
+        /**
+         * @unauthenticated
+        */
     public function getCampaign(int $id, Request $request): CampaignResource {
 
         $data = Campaign::query()->find($id);
@@ -123,6 +131,13 @@ class CampaignController extends Controller
                         ]
                     ],400));
         };
+
+        /**
+         * A user resource.
+         *
+         * @status 200
+         * @body CampaignResource
+         */
         return new CampaignResource($data);
     }
 

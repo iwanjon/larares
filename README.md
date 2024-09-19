@@ -30,5 +30,6 @@ Just Simple Personal Project
 
 ### Description
 Rest api base app using MVC pattern, admin pannel was created using filament (/admin)\
+ApiDoc can be access in /docs/api\n
 Created Using laravel 10 and php 8.1
 

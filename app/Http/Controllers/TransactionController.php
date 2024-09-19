@@ -23,7 +23,7 @@ class TransactionController extends Controller
     {
         $curent_user = $request->get("current_user");
         if (!$curent_user){
-            throw new HttpResponseException(response([
+            return throw new HttpResponseException(response([
                 "errors"=> [
                     "message"=>[
                         "invalid user"
